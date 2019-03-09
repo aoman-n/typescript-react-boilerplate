@@ -10,7 +10,7 @@
     "tslint:prettier-check": "tslint-config-prettier-check ./tslint.json",
     "tslint": "tslint --fix --force --format stylish --project ./tsconfig.prod.json ./{src,__tests__}/**/*.{ts,tsx}",
     "prettier": "prettier --write ./{src,__tests__}/**/*.{ts,tsx}"
-　 },
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
