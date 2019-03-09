@@ -8,7 +8,7 @@ interface HelloProps {
 const Hello: React.FC<HelloProps> = ({ name }) => <h1>Hello, {name}!!</h1>;
 
 const App: React.FC = () => {
-const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(0);
   return (
     <React.Fragment>
       <Hello name="React & Typescript" />
