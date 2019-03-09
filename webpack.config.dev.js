@@ -28,9 +28,6 @@ module.exports = {
 							poolTimeout: Infinity
 						}
 					},
-					// {
-					// 	loader: 'babel-loader'
-					// },
 					{
 						loader: 'ts-loader',
 						options: {
