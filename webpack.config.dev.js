@@ -3,9 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
+	mode: 'development',
+	entry: './src/index.tsx',
 	output: {
-		filename: 'bundle.js',
-		publicPath: '/'
+		filename: 'static/js/bundle.js',
+		path: path.resolve(__dirname, 'dist')
+	},
+	devtool: 'inline-source-map',
+	devServer: {
+		contentBase: path.join(__dirname, '/dist'),
+		historyApiFallback: true,
+		port: 3000
 	},
 	module: {
 		rules: [
@@ -20,12 +28,13 @@ module.exports = {
 							poolTimeout: Infinity
 						}
 					},
-					{
-						loader: 'babel-loader'
-					},
+					// {
+					// 	loader: 'babel-loader'
+					// },
 					{
 						loader: 'ts-loader',
 						options: {
+							configFile: 'tsconfig.dev.json',
 							happyPackMode: true
 						}
 					}
@@ -41,6 +50,9 @@ module.exports = {
 			template: 'src/index.html',
 			filename: 'index.html'
 		}),
-		new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true })
+		new ForkTsCheckerWebpackPlugin({
+			tsconfig: 'tsconfig.dev.json',
+			checkSyntacticErrors: true
+		})
 	]
 };
