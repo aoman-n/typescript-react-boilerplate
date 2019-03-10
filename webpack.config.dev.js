@@ -34,9 +34,20 @@ module.exports = {
               configFile: 'tsconfig.dev.json',
               happyPackMode: true
             }
-          }
+          },
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 51200,
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: {

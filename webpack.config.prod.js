@@ -22,9 +22,6 @@ module.exports = {
               poolTimeout: Infinity
             }
           },
-          // {
-          // 	loader: 'babel-loader'
-          // },
           {
             loader: 'ts-loader',
             options: {
@@ -33,7 +30,18 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 51200,
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: {

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import menu from './menu.png';
 
 interface HelloProps {
   name: string;
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         Count: {count}
         <button onClick={() => setCount(count + 1)}>count up</button>
       </h3>
+      <img src={menu} />
     </React.Fragment>
   );
 };
