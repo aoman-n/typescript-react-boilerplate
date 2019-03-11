@@ -7,13 +7,13 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'static/js/bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, '/dist'),
     historyApiFallback: true,
-    port: 3000
+    port: 3000,
   },
   module: {
     rules: [
@@ -25,17 +25,16 @@ module.exports = {
             loader: 'thread-loader',
             options: {
               workers: require('os').cpus().length - 1,
-              poolTimeout: Infinity
-            }
+            },
           },
           {
             loader: 'ts-loader',
             options: {
               configFile: 'tsconfig.dev.json',
-              happyPackMode: true
-            }
+              happyPackMode: true,
+            },
           },
-        ]
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -48,19 +47,19 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
     new ForkTsCheckerWebpackPlugin({
       tsconfig: 'tsconfig.dev.json',
-      checkSyntacticErrors: true
-    })
-  ]
+      checkSyntacticErrors: true,
+    }),
+  ],
 };

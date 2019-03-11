@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist/",
     "module": "es6",
     "target": "es5",
     "jsx": "react",
@@ -11,17 +12,8 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ],
+    "strictNullChecks": true
   },
-  "include": [
-    "./src/**/*",
-    "./types/index.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["./src/**/*", "./types/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
