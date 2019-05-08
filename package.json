@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
     "precommit": "lint-staged",
-    "lint": "eslint --ext ./ 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.css'"
+    "lint": "eslint --ext ./ 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.css'",
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook -o build/storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,9 +23,21 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
+    "@storybook/addon-a11y": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
     "@types/react-redux": "^7.0.3",
+    "@types/storybook__addon-a11y": "^5.0.0",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__addon-info": "^4.1.1",
+    "@types/storybook__addon-knobs": "^5.0.0",
+    "@types/storybook__addon-links": "^3.3.4",
+    "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "4.0.3",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
@@ -46,6 +60,7 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "prettier-stylelint": "^0.4.2",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "stylelint": "^10.0.1",
     "stylelint-config-prettier": "^5.1.0",
     "stylelint-config-standard": "^18.3.0",

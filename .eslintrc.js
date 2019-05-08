@@ -114,5 +114,16 @@ module.exports = {
         useTabs: false,
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '.storybook/**',
+          'stories/**',
+          '**/*/*.story.*',
+          '**/*/*.stories.*',
+        ],
+      },
+    ],
   },
 };
