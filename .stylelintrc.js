@@ -9,5 +9,7 @@ module.exports = {
     indentation: 2,
     'string-quotes': 'single',
     'order/properties-alphabetical-order': true,
+    'declaration-empty-line-before': null,
+    'no-missing-end-of-source-newline': null,
   },
 };

@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import * as React from 'react';
+import { jsx, css } from '@emotion/core';
 
 interface Props {
   onSubmit: (text: string) => void;
@@ -39,13 +41,20 @@ class Component extends React.Component<Props, State> {
     const { value } = this.state;
 
     return (
-      <div>
+      <div
+        css={css`
+          margin: 20px 30px;
+        `}
+      >
         <form
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
           <input
+            css={css`
+              color: blue;
+            `}
             onChange={e => {
               this.handleChange(e);
             }}
