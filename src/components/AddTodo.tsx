@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-type Props = {
+interface Props {
   onSubmit: (text: string) => void;
-};
+}
 
-type State = {
+interface State {
   value: string; // Inputの中身を保持するためにStateを持つことにする。もちろんReduxに逃がしても良い。
-};
+}
 
 class Component extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -25,15 +25,19 @@ class Component extends React.Component<Props, State> {
 
   handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const text = this.state.value.trim();
+    const { value } = this.state;
+    const { onSubmit } = this.props;
+    const text = value.trim();
     if (text === '') {
       return;
     }
-    this.props.onSubmit(text);
+    onSubmit(text);
     this.setState({ value: '' });
   }
 
   render() {
+    const { value } = this.state;
+
     return (
       <div>
         <form
@@ -45,9 +49,9 @@ class Component extends React.Component<Props, State> {
             onChange={e => {
               this.handleChange(e);
             }}
-            value={this.state.value}
+            value={value}
           />
-          <button type={'submit'}>Add Todo</button>
+          <button type="submit">Add Todo</button>
         </form>
       </div>
     );

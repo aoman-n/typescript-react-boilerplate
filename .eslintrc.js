@@ -28,14 +28,7 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-    'jest',
-    'prettier',
-    'prefer-arrow',
-    'react',
-    'react-hooks',
-  ],
+  plugins: ['@typescript-eslint', 'jest', 'prettier', 'prefer-arrow', 'react', 'react-hooks'],
   root: true,
   settings: {
     'import/resolver': {
