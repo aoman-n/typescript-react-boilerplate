@@ -81,3 +81,6 @@ typings/
 
 # memo
 memo.js
+
+# build
+dist/
