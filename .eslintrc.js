@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -28,10 +30,18 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'jest', 'prettier', 'prefer-arrow', 'react', 'react-hooks'],
+  plugins: [
+    '@typescript-eslint',
+    'jest',
+    'prettier',
+    'prefer-arrow',
+    'react',
+    'react-hooks',
+  ],
   root: true,
   settings: {
     'import/resolver': {
+      webpack: {config: path.join(__dirname, '/webpack.dev.js')},
       node: {
         extensions: ['.js', 'jsx', '.ts', '.tsx'],
       },
