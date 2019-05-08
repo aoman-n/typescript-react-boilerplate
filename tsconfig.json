@@ -15,6 +15,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "containers/*": ["src/containers/*"]
+    }
   },
   "include": ["./src/**/*", "./types/**/*"],
   "exclude": ["node_modules", "dist"]
